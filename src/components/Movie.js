@@ -1,0 +1,28 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Movie.css';
+
+function Movie({year, title, summary, poster, genre }) {
+    return (
+        <div className="movie">
+            <img src={poster} alt={title} title={title} width='200' />
+            <div className="movie__data">
+                <h3 className="movie__title">{title}</h3>
+                <h5 className="movie__year">{year}</h5>
+                <h5 className="movie__genre">{genre}</h5>
+                <p className="movie__summary">{summary}</p>
+            </div>
+        </div>
+        
+    );
+}
+
+Movie.propTypes = {
+    year: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+};
+
+export default Movie;
